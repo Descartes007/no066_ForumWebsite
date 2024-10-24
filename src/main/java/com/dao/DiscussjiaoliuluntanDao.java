@@ -1,0 +1,33 @@
+package com.dao;
+
+import com.entity.DiscussjiaoliuluntanEntity;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import java.util.List;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.plugins.pagination.Pagination;
+
+import org.apache.ibatis.annotations.Param;
+import com.entity.vo.DiscussjiaoliuluntanVO;
+import com.entity.view.DiscussjiaoliuluntanView;
+
+
+/**
+ * 交流论坛评论表
+ * 
+ * @author 
+ * @email 
+ * @date 2021-04-25 17:25:08
+ */
+public interface DiscussjiaoliuluntanDao extends BaseMapper<DiscussjiaoliuluntanEntity> {
+	
+	List<DiscussjiaoliuluntanVO> selectListVO(@Param("ew") Wrapper<DiscussjiaoliuluntanEntity> wrapper);
+	
+	DiscussjiaoliuluntanVO selectVO(@Param("ew") Wrapper<DiscussjiaoliuluntanEntity> wrapper);
+	
+	List<DiscussjiaoliuluntanView> selectListView(@Param("ew") Wrapper<DiscussjiaoliuluntanEntity> wrapper);
+
+	List<DiscussjiaoliuluntanView> selectListView(Pagination page,@Param("ew") Wrapper<DiscussjiaoliuluntanEntity> wrapper);
+	
+	DiscussjiaoliuluntanView selectView(@Param("ew") Wrapper<DiscussjiaoliuluntanEntity> wrapper);
+	
+}
